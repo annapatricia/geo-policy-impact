@@ -11,3 +11,9 @@ heatmaps e visualizações espaciais.
 ## Como rodar
 pip install -r requirements.txt
 jupyter notebook
+
+## Key visual outputs
+
+![Heatmap](reports/figures/heatmap.png)
+![Hexbin](reports/figures/hexbin.png)
+![Before vs After](reports/figures/before_after.png)
