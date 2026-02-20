@@ -1,0 +1,36 @@
+﻿name: Run Geo Policy Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run pipeline
+      run: |
+        python run_pipeline.py
+
+    - name: Commit generated files
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add reports/
+        git commit -m "Auto-update generated maps and figures" || echo "No changes to commit"
+        git push
