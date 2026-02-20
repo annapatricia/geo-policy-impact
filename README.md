@@ -4,10 +4,24 @@ Projeto de portfólio em Python para análise geoespacial com mapas,
 heatmaps e visualizações espaciais.
 
 ## Estrutura
-- notebooks/
-- src/
-- reports/figures/
+``
+geo-policy-impact/
+│
+├── notebooks/
+│   └── 01_simulation_and_maps.ipynb
+│
+├── src/
+│   ├── data_generation.py
+│   └── map_utils.py
+│
+├── reports/
+│   ├── figures/
+│   └── maps/
+│
+├── requirements.txt
+└── README.md
 
+``
 ## Como rodar
 pip install -r requirements.txt
 jupyter notebook
